@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Shapes
+namespace Shapes.Shapes
 {
     public class Point
     {
@@ -40,6 +40,11 @@ namespace Shapes
         public int GetYDistance(Point target)
         {
             return Math.Abs(Y - target.Y);
+        }
+
+        public override string ToString()
+        {
+            return $"({X},{Y})";
         }
     }
 }

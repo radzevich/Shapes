@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Shapes
+namespace Shapes.Shapes
 {
     public class Triangle : Shape
     {
@@ -13,6 +13,11 @@ namespace Shapes
             A = a ?? throw new ArgumentNullException(nameof(a));
             B = b ?? throw new ArgumentNullException(nameof(b));
             C = c ?? throw new ArgumentNullException(nameof(c));
+        }
+        
+        public override Point[] GetPoints()
+        {
+            return new[] { A, B, C };
         }
 
         public override double GetSquare()

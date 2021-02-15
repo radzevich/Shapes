@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Shapes
+namespace Shapes.Shapes
 {
     public class Rectangle : Shape
     {
@@ -27,6 +27,11 @@ namespace Shapes
             var height = GetHeight();
 
             return (width + height) * 2;
+        }
+
+        public override Point[] GetPoints()
+        {
+            return new[] { A, B };
         }
 
         private int GetWidth()
