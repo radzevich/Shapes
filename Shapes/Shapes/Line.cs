@@ -2,7 +2,7 @@
 
 namespace Shapes.Shapes
 {
-    public class Line : Shape
+    public class Line : IShape
     {
         public Point A { get; }
         public Point B { get; }
@@ -13,17 +13,17 @@ namespace Shapes.Shapes
             this.B = B ?? throw new ArgumentNullException(nameof(B));
         }
         
-        public override double GetSquare()
+        public double GetSquare()
         {
             return 0;
         }
 
-        public override double GetPerimeter()
+        public double GetPerimeter()
         {
             return A.GetDistance(B);
         }
 
-        public override Point[] GetPoints()
+        public Point[] GetPoints()
         {
             return new[] {A, B};
         }

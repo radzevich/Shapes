@@ -5,7 +5,7 @@ namespace Shapes.Loggers
 {
     public abstract class Logger
     {
-        public void Log(Shape shape)
+        public void Log(IShape shape)
         {
             var shapeName = shape.GetType().Name;
             var shapePoints = shape.GetPoints();

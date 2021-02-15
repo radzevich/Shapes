@@ -2,7 +2,7 @@
 
 namespace Shapes.Shapes
 {
-    public class Rectangle : Shape
+    public class Rectangle : IShape
     {
         public Point A { get; }
         public Point B { get; }
@@ -13,7 +13,7 @@ namespace Shapes.Shapes
             B = b ?? throw new ArgumentNullException(nameof(b));
         }
         
-        public override double GetSquare()
+        public double GetSquare()
         {
             var width = GetWidth();
             var height = GetHeight();
@@ -21,7 +21,7 @@ namespace Shapes.Shapes
             return width * height;
         }
 
-        public override double GetPerimeter()
+        public double GetPerimeter()
         {
             var width = GetWidth();
             var height = GetHeight();
@@ -29,7 +29,7 @@ namespace Shapes.Shapes
             return (width + height) * 2;
         }
 
-        public override Point[] GetPoints()
+        public Point[] GetPoints()
         {
             return new[] { A, B };
         }
