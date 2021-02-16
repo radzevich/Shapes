@@ -7,10 +7,10 @@ namespace Shapes.Shapes
         public Point A { get; }
         public Point B { get; }
 
-        public Line(Point A, Point B)
+        public Line(Point a, Point b)
         {
-            this.A = A ?? throw new ArgumentNullException(nameof(A));
-            this.B = B ?? throw new ArgumentNullException(nameof(B));
+            A = a ?? throw new ArgumentNullException(nameof(a));
+            B = b ?? throw new ArgumentNullException(nameof(b));
         }
         
         public double GetSquare()
