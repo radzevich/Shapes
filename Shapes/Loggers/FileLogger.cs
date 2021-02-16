@@ -4,9 +4,11 @@ namespace Shapes.Loggers
 {
     public class FileLogger : Logger
     {
+        private const string FilePath = "log.txt";
+
         protected override void LogMessage(string message)
         {
-            File.WriteAllText("log.txt", message);
+            File.WriteAllText(FilePath, message);
         }
     }
 }

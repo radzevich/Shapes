@@ -15,16 +15,16 @@ namespace Shapes.Shapes
         
         public double GetSquare()
         {
-            var width = GetWidth();
-            var height = GetHeight();
+            var width = A.GetXDistance(B);
+            var height = A.GetYDistance(B);
 
             return width * height;
         }
 
         public double GetPerimeter()
         {
-            var width = GetWidth();
-            var height = GetHeight();
+            var width = A.GetXDistance(B);
+            var height = A.GetYDistance(B);
 
             return (width + height) * 2;
         }
@@ -32,16 +32,6 @@ namespace Shapes.Shapes
         public Point[] GetPoints()
         {
             return new[] { A, B };
-        }
-
-        private int GetWidth()
-        {
-            return Math.Abs(A.X - B.X);
-        }
-
-        private int GetHeight()
-        {
-            return Math.Abs(A.Y - B.Y);
         }
     }
 }

@@ -19,20 +19,11 @@ namespace Shapes
         public void WaitUserInput()
         {
             var rectangle = new Rectangle(new Point(1, 3), new Point(4, 6));
-            // while true;
-            OnUserCreateShape(rectangle);
-        }
 
-        private string ReadShapeName()
-        {
-            var shapeName = Console.ReadLine();
-
-            if (!_shapeNames.Contains(shapeName.ToLower()))
+            if (OnUserCreateShape != null) // if nobody is subscribed on event, it will be null
             {
-                throw new Exception("Are you joking???");
+                OnUserCreateShape(rectangle);
             }
-
-            return shapeName;
         }
     }
 }
