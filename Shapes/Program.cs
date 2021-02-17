@@ -26,11 +26,21 @@ namespace Shapes
             controller.OnUserCreatedShape += OnList;
             controller.OnUserCreatedShape += OnExit;
 
-            do
+            try
             {
-                controller.WaitUserInput();
+                do
+                {
+                    controller.WaitUserInput();
+                }
+                while (!_userRequestedExit);
             }
-            while (!_userRequestedExit);
+            finally
+            {
+                controller.OnUserCreatedShape -= OnDrawShape;
+                controller.OnUserCreatedShape -= OnDrawShapeFromListCommand;
+                controller.OnUserCreatedShape -= OnList;
+                controller.OnUserCreatedShape -= OnExit;
+            }
         }
 
         /// <summary>
