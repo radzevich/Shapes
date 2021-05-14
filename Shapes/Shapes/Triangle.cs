@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Shapes
+namespace Shapes.Shapes
 {
-    public class Triangle : Shape
+    public class Triangle : IShape
     {
         public Point A { get; }
         public Point B { get; }
@@ -14,13 +14,18 @@ namespace Shapes
             B = b ?? throw new ArgumentNullException(nameof(b));
             C = c ?? throw new ArgumentNullException(nameof(c));
         }
+        
+        public  Point[] GetPoints()
+        {
+            return new[] { A, B, C };
+        }
 
-        public override double GetSquare()
+        public double GetSquare()
         {
             throw new NotImplementedException();
         }
 
-        public override double GetPerimeter()
+        public double GetPerimeter()
         {
             return A.GetDistance(B) +
                    B.GetDistance(C) +
